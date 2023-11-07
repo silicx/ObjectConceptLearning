@@ -1,0 +1,75 @@
+# data config
+data_type: image  # image, instance, feature
+data_augment: null
+box_file: null
+device: cuda
+num_workers: 0
+# model config
+network: null
+rep_dim: 512
+activation: relu # relu, elu, leaky_relu, relu6
+dropout: null
+batchnorm: true
+layernorm: true
+fc_cls: [512]
+# model config: pretrained backbone/module
+backbone_type: null   # null, resnet50, faster50, ...
+backbone_weight: null
+trained_weight: null
+weight_type: null
+# model config: for OCL (especially OCRN)
+fc_feat2attr: []
+fc_feat2aff: []
+aff_rep_dim: 512
+attr_rep_dim: 512
+# sep_CA_cls: false
+variance_weight: false
+variance_anchor: E  # "E", "E_fix", "E_mean", "I_hidden", "I_fc"
+mlp_attribute: false
+language_feature: bert # "bert768", "word2vec", "none"
+# model config: for DM
+DM_language_type: null
+aff_matrix: null
+# model config: for attr completion
+attr_completion: null
+soft_label_bce: false
+attr_binarize_thres: null
+# training config
+epoch: 1000
+bz: 512
+lr: 1.0e-3
+lr_groups: null
+auto_stop: false
+optimizer: sgd # 'sgd', 'adam', 'adamw', 'momentum', 'rmsprop'
+lr_decay_type: null
+lr_decay_step: 100
+lr_decay_rate: 0.9
+clip_grad: false
+loss_class_weight: false
+focal_loss: null
+grad_clip: null
+triplet_margin: 0.5
+gamma: 1.0  # temperature factor
+# training config: loss for OCRN
+lambda_aux_cls: 0.
+rule_attr_weight: null
+# test settings
+test_freq: 5
+snapshot_freq: 5
+test_only_ia: false
+test_alpha: 1.0
+trained_weight: null
+
+counterfactual_margin : 0.1
+
+out_relu: False
+max_reg: null
+freeze_type: null
+obj_prior_type: default # default(trainset), step
+obj_prior_bins: 10
+log_gradient: false
+positive_bce: null
+
+distributed: false
+
+log_dir: ./logs

@@ -1,0 +1,43 @@
+# data config
+data_type: feature  # image, instance, feature
+# model config
+network: OCRN_intervention
+attr_rep_dim: 1024
+aff_rep_dim: 1024
+parallel_attr_rep_dim: 512
+parallel_aff_rep_dim: 512
+aggr_rep_dim: 1024
+fc_pre: []
+fc_att: []
+fc_compress: []
+fc_feat2attr: []
+fc_feat2aff: []
+fc_cls: []
+fc_para_feat: []
+sep_CA_cls: true
+# model config: pretrained backbone/module
+backbone_type: faster50_pt_frz
+# training config
+epoch: 200
+bz: 192
+lr: 0.03
+loss_class_weight: true
+grad_clip: 10.0
+layernorm: false
+batchnorm: true
+out_relu: true
+out_bn: true
+# training config: loss for OCRN
+aggregation: concat
+lambda_attr: 0.0
+lambda_aff: 0.2
+lambda_cls_CA: 0.03
+lambda_cls_IA: 1.0
+lambda_cls_inst_IA: 0.5
+lambda_cf: 3.0
+lambda_aux_cls: 0.2
+# test settings
+test_freq: 10
+snapshot_freq: 10
+
+freeze_type: ocrn_para_attr

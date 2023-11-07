@@ -1,0 +1,8 @@
+# data config
+data_type: image  # image, instance, feature
+# model config
+network: feature
+# model config: pretrained backbone/module
+backbone_type: faster50_pt_frz
+num_workers: 16
+bz: 1
