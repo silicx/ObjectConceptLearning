@@ -18,7 +18,7 @@ sep_CA_cls: true
 # model config: pretrained backbone/module
 backbone_type: faster50_pt_frz
 # training config
-epoch: 200
+epoch: 20
 bz: 128
 lr: 0.01
 loss_class_weight: true

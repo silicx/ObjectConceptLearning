@@ -78,7 +78,7 @@ python -m torch.distributed.launch --nproc_per_node=4 run_ocl.py --cfg config/OC
 
 python -m torch.distributed.launch --nproc_per_node=4 run_ocl.py --cfg config/OCRN_stage2.yaml --trained_weight ./logs/OCRN_stage1/checkpoint_ep170.pt --weight_type ocrn_attr
 
-python -m torch.distributed.launch --nproc_per_node=4 run_ocl.py --cfg config/OCRN_stage3.yaml --trained_weight ./logs/OCRN_stage2/checkpoint_ep20.pt
+python -m torch.distributed.launch --nproc_per_node=4 run_ocl.py --cfg config/OCRN_stage3.yaml --trained_weight ./logs/OCRN_stage2/checkpoint_ep20.pt --weight_type pretrain
 ```
 
 
