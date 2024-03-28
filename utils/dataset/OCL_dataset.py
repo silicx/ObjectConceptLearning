@@ -86,7 +86,7 @@ class ImageDataset(tdata.Dataset):
             b[obj['aff']] = 1
             aff.append(b)
 
-            x = obj.get('bbox', [0, 0, image_width, image_height])
+            x = obj.get('box', [0, 0, image_width, image_height])
             gt_box.append(x)
 
         attr = torch.stack(attr, 0)
